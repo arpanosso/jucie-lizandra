@@ -1,0 +1,171 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  error = FALSE,
+  warning = FALSE
+)
+```
+# Carregando pacotes
+```{r}
+library(agricolae)
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
+
+# Coletas - 27-07.xlsx
+```{r}
+dados <- read_xlsx("data/Coletas - 27-07.xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  nome_var <- variaveis[i]
+  da <- dados %>% select(grupo, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  my_boxplot <- tibble(grupo, y) %>% 
+    ggplot(aes(grupo, y, fill=grupo)) +
+    geom_boxplot() +
+    theme_bw()+
+    labs(y=nome_var, title = str_to_upper(nome_var)) +
+    scale_fill_viridis_d()+
+    theme(plot.title = element_text(hjust=.5))
+  print(my_boxplot)
+  
+  modelo <- aov(y ~grupo)
+  print(anova(modelo))
+  
+  teste_t <- LSD.test(modelo,"grupo",console = TRUE)
+  print(teste_t)
+  rs <- rstudent(modelo)
+  my_hist <- tibble(rs) %>% 
+    ggplot(aes(x=rs, y=..density..)) +
+    geom_histogram(bins=12,color="black",fill="lightgray") +
+    theme_bw() +
+    labs(title= paste("Shapiro-Wilks: W = ", 
+                      shapiro.test(rs)$statistic %>% round(digits = 4),
+                      "; p-valor = ",
+                      shapiro.test(rs)$p.value %>% round(digits = 4)
+                      ),
+         x=paste0("residuos studentizados (",nome_var,")"))
+  print(my_hist)
+}
+```
+
+
+# DXA - 29 -07 (2).xlsx
+```{r}
+dados <- read_xlsx("data/DXA - 29 -07 (2).xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  nome_var <- variaveis[i]
+  da <- dados %>% select(grupo, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  my_boxplot <- tibble(grupo, y) %>% 
+    ggplot(aes(grupo, y, fill=grupo)) +
+    geom_boxplot() +
+    theme_bw()+
+    labs(y=nome_var, title = str_to_upper(nome_var)) +
+    scale_fill_viridis_d()+
+    theme(plot.title = element_text(hjust=.5))
+  print(my_boxplot)
+  
+  modelo <- aov(y ~grupo)
+  print(anova(modelo))
+  
+  teste_t <- LSD.test(modelo,"grupo",console = TRUE)
+  print(teste_t)
+    rs <- rstudent(modelo)
+  my_hist <- tibble(rs) %>% 
+    ggplot(aes(x=rs, y=..density..)) +
+    geom_histogram(bins=12,color="black",fill="lightgray") +
+    theme_bw() +
+    labs(title= paste("Shapiro-Wilks: W = ", 
+                      shapiro.test(rs)$statistic %>% round(digits = 4),
+                      "; p-valor = ",
+                      shapiro.test(rs)$p.value %>% round(digits = 4)
+                      ),
+         x=paste0("residuos studentizados (",nome_var,")"))
+  print(my_hist)
+}
+```
+
+
+# Medidas e peso dos membros - 27-07
+```{r}
+dados <- read_xlsx("data/Medidas e peso dos membros - 27-07.xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  nome_var <- variaveis[i]
+  da <- dados %>% select(grupo, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  my_boxplot <- tibble(grupo, y) %>% 
+    ggplot(aes(grupo, y, fill=grupo)) +
+    geom_boxplot() +
+    theme_bw()+
+    labs(y=nome_var, title = str_to_upper(nome_var)) +
+    scale_fill_viridis_d()+
+    theme(plot.title = element_text(hjust=.5))
+  print(my_boxplot)
+  
+  modelo <- aov(y ~grupo)
+  print(anova(modelo))
+  
+  teste_t <- LSD.test(modelo,"grupo",console = TRUE)
+  print(teste_t)
+    rs <- rstudent(modelo)
+  my_hist <- tibble(rs) %>% 
+    ggplot(aes(x=rs, y=..density..)) +
+    geom_histogram(bins=12,color="black",fill="lightgray") +
+    theme_bw() +
+    labs(title= paste("Shapiro-Wilks: W = ", 
+                      shapiro.test(rs)$statistic %>% round(digits = 4),
+                      "; p-valor = ",
+                      shapiro.test(rs)$p.value %>% round(digits = 4)
+                      ),
+         x=paste0("residuos studentizados (",nome_var,")"))
+  print(my_hist)
+}
+```
