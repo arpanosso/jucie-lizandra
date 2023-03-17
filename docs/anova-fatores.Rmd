@@ -1,0 +1,112 @@
+---
+title: "Jucie - Lizandra"
+author: "Panosso AR & Oliveira CF"
+date: "2023-03-17"
+output: html_document
+---
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  error = FALSE,
+  warning = FALSE
+)
+```
+
+# Carregando pacotes
+```{r}
+library(agricolae)
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
+
+# Coletas - 27-07.xlsx
+```{r}
+dados <- read_xlsx("../data/Coletas - 27-07.xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  cat(variaveis[i])
+  nome_var <- variaveis[i]
+  da <- dados %>% select(grupo,sexo,linhagem, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  sexo <- da  %>% pull(sexo) %>% as_factor()
+  linhagem <- da  %>% pull(linhagem) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  ExpDes.pt::fat3.dic(grupo,sexo,linhagem,y,fac.names = c("grupo","sexo","linhagem"),sigT = .1, sigF = .1)
+}
+```
+
+
+# DXA - 29 -07 (2).xlsx
+```{r}
+dados <- read_xlsx("../data/DXA - 29 -07 (2).xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  cat(variaveis[i])
+  nome_var <- variaveis[i]
+  da <- dados %>% select(grupo,sexo,linhagem, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  sexo <- da  %>% pull(sexo) %>% as_factor()
+  linhagem <- da  %>% pull(linhagem) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  ExpDes.pt::fat3.dic(grupo,sexo,linhagem,y,fac.names = c("grupo","sexo","linhagem"),sigT = .1, sigF = .1)
+}
+```
+
+
+# Medidas e peso dos membros - 27-07
+```{r}
+dados <- read_xlsx("../data/Medidas e peso dos membros - 27-07.xlsx",na="NA") %>% 
+  clean_names()
+glimpse(dados)
+```
+
+```{r}
+variaveis <- dados[5:length(dados)] %>% names()
+grupo <-dados %>% pull(grupo) %>% as_factor()
+```
+
+## Anova
+
+```{r}
+for(i in seq_along(variaveis)){
+  cat(variaveis[i])
+  nome_var <- variaveis[i]
+    da <- dados %>% select(grupo,sexo,linhagem, nome_var) %>% drop_na()
+  grupo <- da  %>% pull(grupo) %>% as_factor()
+  sexo <- da  %>% pull(sexo) %>% as_factor()
+  linhagem <- da  %>% pull(linhagem) %>% as_factor()
+  y <- da %>% pull(nome_var)
+  ExpDes.pt::fat3.dic(grupo,sexo,linhagem,y,fac.names = c("grupo","sexo","linhagem"),sigT = .1, sigF = .1)
+}
+```
