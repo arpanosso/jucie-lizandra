@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# ANALISE COM %
+
 # Carregando pacotes
 
 ``` r
@@ -17,43 +19,44 @@ dados <- read_xlsx("data/Coletas - 27-07.xlsx",na="NA") %>%
   clean_names()
 glimpse(dados)
 #> Rows: 48
-#> Columns: 36
-#> $ grupo             <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2~
-#> $ repeticao         <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1~
-#> $ sexo              <chr> "Macho", "Macho", "Macho", "Macho", "Macho", "Macho"~
-#> $ linhagem          <chr> "Ross", "Ross", "Ross", "Ross", "Cobb", "Cobb", "Cob~
-#> $ peso              <dbl> 3.140, 3.340, 3.186, 2.668, 3.070, 2.580, 2.900, 2.6~
-#> $ tamanho           <dbl> 58, 55, 54, 51, 56, 49, 53, 50, 44, 49, 48, 50, 47, ~
-#> $ m_peito           <dbl> 960.000, 905.000, 875.000, 810.000, 960.000, 760.000~
-#> $ m_gast_peso       <dbl> 14.93, 17.62, 15.40, 16.00, 16.00, 10.00, 12.00, 14.~
-#> $ m_gast_comp       <dbl> 9.0, 9.0, 12.0, 8.0, 8.0, 6.0, 6.0, 9.0, 8.0, 8.0, 7~
-#> $ m_gast_diam       <dbl> 6.0, 9.0, 9.0, 7.0, 8.0, 9.0, 8.0, 8.0, 8.0, 7.0, 8.~
-#> $ m_sart_peso       <dbl> 19.50, 20.51, 17.30, 16.00, 12.00, 14.00, 10.00, 10.~
-#> $ m_sart_tam        <dbl> 6.0, 15.0, 8.0, 10.0, 10.0, 10.0, 9.0, 10.0, 11.0, 9~
-#> $ m_sart_diametro   <dbl> 6.0, 8.0, 7.0, 7.0, 7.0, 8.0, 5.0, 5.0, 6.0, 6.0, 7.~
-#> $ figado            <dbl> 52.19, 57.06, 54.00, 62.00, 58.00, 54.00, 70.00, 56.~
-#> $ coracao           <dbl> 10.51, 12.44, 12.00, 10.51, 14.00, 10.00, 16.00, 12.~
-#> $ baco              <dbl> 2.99, 3.02, 4.00, 4.00, 2.00, 4.00, 4.00, 4.00, 2.00~
-#> $ rim               <dbl> 15.82, 19.55, 19.75, 18.00, 20.00, 14.00, 16.00, 18.~
-#> $ pulmao            <dbl> 14.30, 22.84, 16.34, 24.00, 16.00, 16.00, 18.00, 16.~
-#> $ panc_peso         <dbl> 2.94, 2.59, 5.86, 8.00, 6.00, 4.00, 4.00, 2.00, 6.00~
-#> $ panc_tamanho      <dbl> 13, 12, 14, 13, 17, 14, 12, 11, 13, 10, 13, 14, 13, ~
-#> $ moela_cheia       <dbl> 44.16, 42.30, 40.00, 50.00, 56.00, 48.00, 54.00, 36.~
-#> $ moela_vazia       <dbl> 35.98, 36.84, 30.02, 36.00, 40.00, 30.00, 34.00, 28.~
-#> $ porov_peso        <dbl> 7.19, 10.51, 15.00, 12.00, 14.00, 6.00, 8.00, 8.00, ~
-#> $ prov_tamanho      <dbl> 5.0, 5.0, 6.3, 5.0, 6.0, 4.0, 5.0, 5.0, 6.0, 4.0, 5.~
-#> $ prov_diametro     <dbl> 6.00, 9.03, 7.50, 7.00, 7.00, 5.00, 7.00, 6.00, 7.00~
-#> $ esofago_peso      <dbl> 19.17, 11.43, 15.00, 20.00, 16.00, 7.00, 8.00, 18.00~
-#> $ esofago_tamanho   <dbl> 18, 21, 22, 13, 14, 13, 14, 23, 16, 20, 25, 16, 23, ~
-#> $ duod_peso         <dbl> 11.78, 14.07, 11.51, 18.00, 14.00, 11.03, 10.00, 12.~
-#> $ duod_tamanho      <dbl> 31.00, 33.00, 30.00, 33.00, 30.00, 29.00, 26.00, 31.~
-#> $ ileo_peso         <dbl> 12.92, 13.00, 6.70, 4.00, 6.00, 6.00, 6.00, 6.00, 8.~
-#> $ ileo_tamanho      <dbl> 23.00, 24.00, 22.00, 22.00, 18.00, 18.00, 21.00, 20.~
-#> $ jejuno_peso       <dbl> 41.03, 42.11, 44.00, 48.00, 44.00, 48.00, 46.00, 40.~
-#> $ jejuno_tamanho    <dbl> 145, 148, 135, 130, 135, 131, 123, 126, 122, 160, 14~
-#> $ al_cecais_peso    <dbl> 13.04, 16.57, 12.94, 18.00, 12.00, 18.00, 12.00, 14.~
-#> $ al_cecais_tamanho <dbl> 33.0, 33.0, 31.0, 31.0, 29.0, 39.0, 27.0, 29.0, 40.0~
-#> $ gordura           <dbl> 66.18, 68.90, 41.15, 46.00, 68.00, 50.00, 56.00, 48.~
+#> Columns: 37
+#> $ grupo            <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,~
+#> $ repeticao        <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16~
+#> $ sexo             <chr> "Macho", "Macho", "Macho", "Macho", "Macho", "Macho",~
+#> $ linhagem         <chr> "Ross", "Ross", "Ross", "Ross", "Cobb", "Cobb", "Cobb~
+#> $ peso             <dbl> 3.140, 3.342, 3.186, 2.668, 3.070, 2.586, 2.900, 2.64~
+#> $ m_peito          <dbl> 960, 905, 875, 810, 960, 760, 970, 918, 880, 920, 808~
+#> $ perc_m_peito     <dbl> 0.3057325, 0.2707959, 0.2746390, 0.3035982, 0.3127036~
+#> $ m_gast_peso      <dbl> 14.93, 17.62, 15.40, 16.00, 16.00, 10.00, 12.00, 14.0~
+#> $ perc_m_gast_peso <dbl> 0.004754777, 0.005272292, 0.004833647, 0.005997001, 0~
+#> $ m_sart_peso      <dbl> 19.50, 20.51, 17.30, 16.00, 12.00, 14.00, 10.00, 10.0~
+#> $ perc_m_sart_peso <dbl> 0.006210191, 0.006137044, 0.005430006, 0.005997001, 0~
+#> $ figado           <dbl> 52.19, 57.60, 54.00, 62.00, 58.00, 54.00, 70.00, 56.0~
+#> $ perc_figado      <dbl> 0.01662102, 0.01723519, 0.01694915, 0.02323838, 0.018~
+#> $ coracao          <dbl> 10.51, 12.44, 12.00, 10.51, 14.00, 10.00, 16.00, 12.0~
+#> $ perc_coracao     <dbl> 0.003347134, 0.003722322, 0.003766478, 0.003939280, 0~
+#> $ baco             <dbl> 2.99, 3.02, 4.00, 4.00, 2.00, 4.00, 4.00, 4.00, 2.00,~
+#> $ perc_baco        <dbl> 0.0009522293, 0.0009036505, 0.0012554928, 0.001499250~
+#> $ rim              <dbl> 15.82, 19.55, 19.75, 18.00, 20.00, 14.00, 16.00, 18.0~
+#> $ perc_rim         <dbl> 0.005038217, 0.005849791, 0.006198996, 0.006746627, 0~
+#> $ pulmao           <dbl> 14.30, 22.84, 16.34, 24.00, 16.00, 16.00, 18.00, 16.0~
+#> $ perc_pulmao      <dbl> 0.004554140, 0.006834231, 0.005128688, 0.008995502, 0~
+#> $ panc_peso        <dbl> 2.94, 2.59, 5.86, 8.00, 6.00, 4.00, 4.00, 2.00, 6.00,~
+#> $ perc_panc_peso   <dbl> 0.0009363057, 0.0007749850, 0.0018392969, 0.002998500~
+#> $ moela_cheia      <dbl> 44.16, 42.30, 40.00, 50.00, 56.00, 48.00, 54.00, 36.0~
+#> $ perc_moela_cheia <dbl> 0.01406369, 0.01265709, 0.01255493, 0.01874063, 0.018~
+#> $ moela_vazia      <dbl> 35.98, 36.84, 30.02, 36.00, 40.00, 30.00, 34.00, 28.0~
+#> $ perc_moela_vazia <dbl> 0.011458599, 0.011023339, 0.009422473, 0.013493253, 0~
+#> $ prov_peso        <dbl> 7.19, 10.51, 15.00, 12.00, 14.00, 6.00, 8.00, 8.00, 1~
+#> $ perc_prov_peso   <dbl> 0.002289809, 0.003144823, 0.004708098, 0.004497751, 0~
+#> $ duod_peso        <dbl> 11.78, 14.70, 11.51, 18.00, 14.00, 11.30, 10.00, 12.0~
+#> $ perc_duod_peso   <dbl> 0.003751592, 0.004398564, 0.003612680, 0.006746627, 0~
+#> $ ileo_peso        <dbl> 12.92, 13.00, 6.70, 4.00, 6.00, 6.00, 6.00, 6.00, 8.0~
+#> $ perc_ileo_peso   <dbl> 0.0041146497, 0.0038898863, 0.0021029504, 0.001499250~
+#> $ jejuno_peso      <dbl> 41.30, 42.11, 44.00, 48.00, 44.00, 48.00, 46.00, 40.0~
+#> $ perc_jejuno_peso <dbl> 0.013152866, 0.012600239, 0.013810421, 0.017991004, 0~
+#> $ gordura          <dbl> 66.18, 68.90, 41.15, 46.00, 68.00, 50.00, 56.00, 48.0~
+#> $ perc_gordura     <dbl> 0.021076433, 0.020616397, 0.012915882, 0.017241379, 0~
 ```
 
 ``` r
@@ -104,8 +107,8 @@ for(i in seq_along(variaveis)){
     #> 
     #> Response: y
     #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2 17.2471  8.6235  100.53 < 2.2e-16 ***
-    #> Residuals 45  3.8602  0.0858                      
+    #> grupo      2 17.5045  8.7523  98.645 < 2.2e-16 ***
+    #> Residuals 45  3.9926  0.0887                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -113,29 +116,29 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  0.08578296 
+    #> Mean Square Error:  0.08872514 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
     #>          y       std  r      LCL      UCL   Min   Max
-    #> 1 2.956562 0.3650282 16 2.809086 3.104039 2.268 3.672
-    #> 2 2.090187 0.2866680 16 1.942711 2.237664 1.356 2.420
-    #> 3 1.496750 0.2047553 16 1.349274 1.644226 1.200 1.812
+    #> 1 2.957063 0.3647588 16 2.807078 3.107047 2.268 3.672
+    #> 2 2.090187 0.2866680 16 1.940203 2.240172 1.356 2.420
+    #> 3 1.485625 0.2257163 16 1.335641 1.635609 1.022 1.812
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 0.208563 
+    #> least Significant Difference: 0.2121095 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
     #>          y groups
-    #> 1 2.956562      a
+    #> 1 2.957063      a
     #> 2 2.090187      b
-    #> 3 1.496750      c
+    #> 3 1.485625      c
     #> $statistics
-    #>      MSerror Df     Mean       CV  t.value      LSD
-    #>   0.08578296 45 2.181167 13.42801 2.014103 0.208563
+    #>      MSerror Df     Mean       CV  t.value       LSD
+    #>   0.08872514 45 2.177625 13.67856 2.014103 0.2121095
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
@@ -143,18 +146,18 @@ for(i in seq_along(variaveis)){
     #> 
     #> $means
     #>          y       std  r      LCL      UCL   Min   Max     Q25   Q50   Q75
-    #> 1 2.956562 0.3650282 16 2.809086 3.104039 2.268 3.672 2.66350 2.985 3.192
-    #> 2 2.090187 0.2866680 16 1.942711 2.237664 1.356 2.420 1.94225 2.162 2.340
-    #> 3 1.496750 0.2047553 16 1.349274 1.644226 1.200 1.812 1.31600 1.507 1.672
+    #> 1 2.957063 0.3647588 16 2.807078 3.107047 2.268 3.672 2.66350 2.985 3.192
+    #> 2 2.090187 0.2866680 16 1.940203 2.240172 1.356 2.420 1.94225 2.162 2.340
+    #> 3 1.485625 0.2257163 16 1.335641 1.635609 1.022 1.812 1.31600 1.507 1.672
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
     #>          y groups
-    #> 1 2.956562      a
+    #> 1 2.957063      a
     #> 2 2.090187      b
-    #> 3 1.496750      c
+    #> 3 1.485625      c
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -164,9 +167,9 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2 567.04 283.521  21.492 2.806e-07 ***
-    #> Residuals 45 593.63  13.192                      
+    #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
+    #> grupo      2 2583144 1291572  101.27 < 2.2e-16 ***
+    #> Residuals 45  573935   12754                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -174,48 +177,48 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  13.19167 
+    #> Mean Square Error:  12754.12 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>         y      std  r      LCL      UCL Min Max
-    #> 1 50.6875 3.646345 16 48.85868 52.51632  44  58
-    #> 2 43.6250 3.593976 16 41.79618 45.45382  37  50
-    #> 3 43.1875 3.655475 16 41.35868 45.01632  34  49
+    #>          y       std  r      LCL      UCL Min  Max
+    #> 1 934.0625 137.23093 16 877.1973 990.9277 722 1221
+    #> 2 605.0625 122.70097 16 548.1973 661.9277 362  782
+    #> 3 368.3281  66.13992 16 311.4629 425.1934 270  506
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 2.586346 
+    #> least Significant Difference: 80.41961 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>         y groups
-    #> 1 50.6875      a
-    #> 2 43.6250      b
-    #> 3 43.1875      b
+    #>          y groups
+    #> 1 934.0625      a
+    #> 2 605.0625      b
+    #> 3 368.3281      c
     #> $statistics
     #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   13.19167 45 45.83333 7.924437 2.014103 2.586346
+    #>   12754.12 45 635.8177 17.76203 2.014103 80.41961
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>         y      std  r      LCL      UCL Min Max   Q25  Q50   Q75
-    #> 1 50.6875 3.646345 16 48.85868 52.51632  44  58 48.75 50.0 53.25
-    #> 2 43.6250 3.593976 16 41.79618 45.45382  37  50 41.00 43.5 46.00
-    #> 3 43.1875 3.655475 16 41.35868 45.01632  34  49 41.50 43.5 45.00
+    #>          y       std  r      LCL      UCL Min  Max    Q25   Q50    Q75
+    #> 1 934.0625 137.23093 16 877.1973 990.9277 722 1221 858.75 919.0 980.00
+    #> 2 605.0625 122.70097 16 548.1973 661.9277 362  782 555.50 591.0 720.25
+    #> 3 368.3281  66.13992 16 311.4629 425.1934 270  506 335.00 353.5 393.50
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>         y groups
-    #> 1 50.6875      a
-    #> 2 43.6250      b
-    #> 3 43.1875      b
+    #>          y groups
+    #> 1 934.0625      a
+    #> 2 605.0625      b
+    #> 3 368.3281      c
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -225,9 +228,9 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value   Pr(>F)   
-    #> grupo      2  753296  376648  6.3939 0.003597 **
-    #> Residuals 45 2650849   58908                    
+    #>           Df   Sum Sq Mean Sq F value    Pr(>F)    
+    #> grupo      2 0.035020 0.01751  13.367 2.776e-05 ***
+    #> Residuals 45 0.058948 0.00131                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -235,48 +238,52 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  58907.75 
+    #> Mean Square Error:  0.001309963 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y       std  r      LCL      UCL    Min Max
-    #> 1 655.7786 396.60212 16 533.5682 777.9889   1.01 970
-    #> 2 605.0625 122.70097 16 482.8521 727.2729 362.00 782
-    #> 3 368.3281  66.13992 16 246.1178 490.5385 270.00 506
+    #>           y        std  r       LCL       UCL       Min       Max
+    #> 1 0.3159650 0.02443725 16 0.2977407 0.3341893 0.2707959 0.3545994
+    #> 2 0.2899188 0.04212206 16 0.2716945 0.3081431 0.1540426 0.3475556
+    #> 3 0.2502696 0.03947712 16 0.2320453 0.2684940 0.1778607 0.3169935
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 172.8315 
+    #> least Significant Difference: 0.02577308 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>          y groups
-    #> 1 655.7786      a
-    #> 2 605.0625      a
-    #> 3 368.3281      b
+    #>           y groups
+    #> 1 0.3159650      a
+    #> 2 0.2899188      b
+    #> 3 0.2502696      c
     #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   58907.75 45 543.0564 44.69318 2.014103 172.8315
+    #>       MSerror Df      Mean       CV  t.value        LSD
+    #>   0.001309963 45 0.2853845 12.68234 2.014103 0.02577308
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y       std  r      LCL      UCL    Min Max      Q25   Q50    Q75
-    #> 1 655.7786 396.60212 16 533.5682 777.9889   1.01 970 541.8053 842.5 918.50
-    #> 2 605.0625 122.70097 16 482.8521 727.2729 362.00 782 555.5000 591.0 720.25
-    #> 3 368.3281  66.13992 16 246.1178 490.5385 270.00 506 335.0000 353.5 393.50
+    #>           y        std  r       LCL       UCL       Min       Max       Q25
+    #> 1 0.3159650 0.02443725 16 0.2977407 0.3341893 0.2707959 0.3545994 0.3021824
+    #> 2 0.2899188 0.04212206 16 0.2716945 0.3081431 0.1540426 0.3475556 0.2828728
+    #> 3 0.2502696 0.03947712 16 0.2320453 0.2684940 0.1778607 0.3169935 0.2271739
+    #>         Q50       Q75
+    #> 1 0.3174445 0.3330079
+    #> 2 0.2961256 0.3098659
+    #> 3 0.2540822 0.2735440
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>          y groups
-    #> 1 655.7786      a
-    #> 2 605.0625      a
-    #> 3 368.3281      b
+    #>           y groups
+    #> 1 0.3159650      a
+    #> 2 0.2899188      b
+    #> 3 0.2502696      c
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -347,9 +354,9 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)   
-    #> grupo      2 25.035 12.5175  7.4356 0.001621 **
-    #> Residuals 45 75.755  1.6834                    
+    #>           Df     Sum Sq    Mean Sq F value  Pr(>F)  
+    #> grupo      2 5.9370e-06 2.9683e-06  2.4255 0.09991 .
+    #> Residuals 45 5.5071e-05 1.2238e-06                  
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -357,114 +364,57 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  1.683444 
+    #> Mean Square Error:  1.223792e-06 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>        y       std  r      LCL      UCL Min Max
-    #> 1 8.0625 1.4818344 16 7.409187 8.715813   6  12
-    #> 2 7.3125 1.4818344 16 6.659187 7.965813   5  10
-    #> 3 6.3000 0.8115828 16 5.646687 6.953313   4   7
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004754620 0.0008218528 16 0.004197594 0.005311646 0.002636166 0.005997001
+    #> 2 0.004156738 0.0009192036 16 0.003599712 0.004713764 0.002553191 0.005500550
+    #> 3 0.003918598 0.0014666282 16 0.003361572 0.004475625 0.001243781 0.006789413
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 0.9239238 
+    #> least Significant Difference: 0.0007877539 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>        y groups
-    #> 1 8.0625      a
-    #> 2 7.3125      a
-    #> 3 6.3000      b
+    #>             y groups
+    #> 1 0.004754620      a
+    #> 2 0.004156738     ab
+    #> 3 0.003918598      b
     #> $statistics
-    #>    MSerror Df  Mean       CV  t.value       LSD
-    #>   1.683444 45 7.225 17.95815 2.014103 0.9239238
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   1.223792e-06 45 0.004276652 25.86723 2.014103 0.0007877539
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>        y       std  r      LCL      UCL Min Max  Q25 Q50  Q75
-    #> 1 8.0625 1.4818344 16 7.409187 8.715813   6  12 7.75 8.0 9.00
-    #> 2 7.3125 1.4818344 16 6.659187 7.965813   5  10 6.00 7.0 8.25
-    #> 3 6.3000 0.8115828 16 5.646687 6.953313   4   7 6.00 6.5 7.00
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004754620 0.0008218528 16 0.004197594 0.005311646 0.002636166 0.005997001
+    #> 2 0.004156738 0.0009192036 16 0.003599712 0.004713764 0.002553191 0.005500550
+    #> 3 0.003918598 0.0014666282 16 0.003361572 0.004475625 0.001243781 0.006789413
+    #>           Q25         Q50         Q75
+    #> 1 0.004351894 0.004794212 0.005274312
+    #> 2 0.003405289 0.004160814 0.004949054
+    #> 3 0.003021830 0.004348235 0.004904131
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>        y groups
-    #> 1 8.0625      a
-    #> 2 7.3125      a
-    #> 3 6.3000      b
+    #>             y groups
+    #> 1 0.004754620      a
+    #> 2 0.004156738     ab
+    #> 3 0.003918598      b
     #> 
     #> attr(,"class")
     #> [1] "group"
 
 ![](README_files/figure-gfm/unnamed-chunk-5-10.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-11.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)    
-    #> grupo      2 35.020 17.5098  16.431 4.39e-06 ***
-    #> Residuals 45 47.955  1.0657                     
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  1.065663 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>          y       std  r      LCL      UCL Min Max
-    #> 1 7.437500 1.2093387 16 6.917705 7.957295   5 9.0
-    #> 2 7.000000 0.9486833 16 6.480205 7.519795   5 8.0
-    #> 3 5.446875 0.9135040 16 4.927080 5.966670   4 7.5
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 0.7351006 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>          y groups
-    #> 1 7.437500      a
-    #> 2 7.000000      a
-    #> 3 5.446875      b
-    #> $statistics
-    #>    MSerror Df     Mean       CV  t.value       LSD
-    #>   1.065663 45 6.628125 15.57469 2.014103 0.7351006
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>          y       std  r      LCL      UCL Min Max  Q25  Q50 Q75
-    #> 1 7.437500 1.2093387 16 6.917705 7.957295   5 9.0 6.75 8.00   8
-    #> 2 7.000000 0.9486833 16 6.480205 7.519795   5 8.0 6.00 7.00   8
-    #> 3 5.446875 0.9135040 16 4.927080 5.966670   4 7.5 5.00 5.25   6
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>          y groups
-    #> 1 7.437500      a
-    #> 2 7.000000      a
-    #> 3 5.446875      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-12.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-13.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -525,14 +475,77 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
+![](README_files/figure-gfm/unnamed-chunk-5-12.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-13.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df   Sum Sq    Mean Sq F value Pr(>F)
+    #> grupo      2 9.08e-07 4.5387e-07  0.1469 0.8638
+    #> Residuals 45 1.39e-04 3.0889e-06               
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  3.088853e-06 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>             y         std  r         LCL         UCL         Min         Max
+    #> 1 0.004172176 0.001544226 16 0.003287222 0.005057129 0.001302181 0.006210191
+    #> 2 0.003955947 0.001819059 16 0.003070993 0.004840900 0.001103753 0.006687023
+    #> 3 0.003840378 0.001890225 16 0.002955424 0.004725331 0.001898734 0.009294258
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.001251513 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>             y groups
+    #> 1 0.004172176      a
+    #> 2 0.003955947      a
+    #> 3 0.003840378      a
+    #> $statistics
+    #>        MSerror Df      Mean       CV  t.value         LSD
+    #>   3.088853e-06 45 0.0039895 44.05347 2.014103 0.001251513
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>             y         std  r         LCL         UCL         Min         Max
+    #> 1 0.004172176 0.001544226 16 0.003287222 0.005057129 0.001302181 0.006210191
+    #> 2 0.003955947 0.001819059 16 0.003070993 0.004840900 0.001103753 0.006687023
+    #> 3 0.003840378 0.001890225 16 0.002955424 0.004725331 0.001898734 0.009294258
+    #>           Q25         Q50         Q75
+    #> 1 0.003559911 0.004244346 0.005417826
+    #> 2 0.002448512 0.003931545 0.005312455
+    #> 3 0.002479169 0.003119407 0.004757672
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>             y groups
+    #> 1 0.004172176      a
+    #> 2 0.003955947      a
+    #> 3 0.003840378      a
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
 ![](README_files/figure-gfm/unnamed-chunk-5-14.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-15.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value  Pr(>F)   
-    #> grupo      2  29.578 14.7890  6.1777 0.00426 **
-    #> Residuals 45 107.727  2.3939                   
+    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
+    #> grupo      2 2378.6 1189.32  9.0638 0.0004924 ***
+    #> Residuals 45 5904.7  131.22                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -540,48 +553,48 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  2.393931 
+    #> Mean Square Error:  131.2163 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>         y      std  r      LCL       UCL Min Max
-    #> 1 9.55000 1.887856 16 8.770928 10.329072 6.0  15
-    #> 2 8.18750 1.181454 16 7.408428  8.966572 6.0  10
-    #> 3 7.69375 1.490623 16 6.914678  8.472822 5.3  10
+    #>          y       std  r      LCL      UCL Min   Max
+    #> 1 57.05750  7.172165 16 51.28963 62.82537  44 70.00
+    #> 2 47.28312 14.759924 16 41.51525 53.05100  30 98.00
+    #> 3 39.86812 11.151395 16 34.10025 45.63600  22 60.86
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 1.101774 
+    #> least Significant Difference: 8.157004 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>         y groups
-    #> 1 9.55000      a
-    #> 2 8.18750      b
-    #> 3 7.69375      b
+    #>          y groups
+    #> 1 57.05750      a
+    #> 2 47.28312      b
+    #> 3 39.86812      b
     #> $statistics
     #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   2.393931 45 8.477083 18.25195 2.014103 1.101774
+    #>   131.2163 45 48.06958 23.82997 2.014103 8.157004
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>         y      std  r      LCL       UCL Min Max   Q25  Q50 Q75
-    #> 1 9.55000 1.887856 16 8.770928 10.329072 6.0  15 8.925 9.75  10
-    #> 2 8.18750 1.181454 16 7.408428  8.966572 6.0  10 7.000 8.50   9
-    #> 3 7.69375 1.490623 16 6.914678  8.472822 5.3  10 6.375 8.00   9
+    #>          y       std  r      LCL      UCL Min   Max     Q25    Q50    Q75
+    #> 1 57.05750  7.172165 16 51.28963 62.82537  44 70.00 53.5475 56.485 60.500
+    #> 2 47.28312 14.759924 16 41.51525 53.05100  30 98.00 40.4425 44.225 47.075
+    #> 3 39.86812 11.151395 16 34.10025 45.63600  22 60.86 33.9300 40.945 46.460
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>         y groups
-    #> 1 9.55000      a
-    #> 2 8.18750      b
-    #> 3 7.69375      b
+    #>          y groups
+    #> 1 57.05750      a
+    #> 2 47.28312      b
+    #> 3 39.86812      b
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -591,9 +604,9 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)   
-    #> grupo      2 21.852 10.9258  6.5222 0.003256 **
-    #> Residuals 45 75.383  1.6752                    
+    #>           Df    Sum Sq    Mean Sq F value  Pr(>F)  
+    #> grupo      2 0.0004477 0.00022383  2.9152 0.06449 .
+    #> Residuals 45 0.0034551 0.00007678                  
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -601,114 +614,57 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  1.675181 
+    #> Mean Square Error:  7.677996e-05 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>         y      std  r      LCL      UCL Min Max
-    #> 1 6.59375 1.267264 16 5.942043 7.245457 4.2 9.0
-    #> 2 5.96875 1.396051 16 5.317043 6.620457 4.0 8.5
-    #> 3 4.95625 1.212693 16 4.304543 5.607957 3.5 7.8
+    #>            y         std  r        LCL        UCL        Min        Max
+    #> 1 0.01941009 0.002263279 16 0.01499798 0.02382219 0.01662102 0.02413793
+    #> 2 0.02398422 0.013426045 16 0.01957212 0.02839633 0.01276596 0.07227139
+    #> 3 0.02682319 0.006705130 16 0.02241109 0.03123530 0.01797386 0.03804473
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 0.9216533 
+    #> least Significant Difference: 0.006239657 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>         y groups
-    #> 1 6.59375      a
-    #> 2 5.96875      a
-    #> 3 4.95625      b
+    #>            y groups
+    #> 3 0.02682319      a
+    #> 2 0.02398422     ab
+    #> 1 0.01941009      b
     #> $statistics
-    #>    MSerror Df     Mean       CV  t.value       LSD
-    #>   1.675181 45 5.839583 22.16404 2.014103 0.9216533
+    #>        MSerror Df       Mean       CV  t.value         LSD
+    #>   7.677996e-05 45 0.02340583 37.43689 2.014103 0.006239657
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>         y      std  r      LCL      UCL Min Max Q25  Q50   Q75
-    #> 1 6.59375 1.267264 16 5.942043 7.245457 4.2 9.0   6 6.75 7.200
-    #> 2 5.96875 1.396051 16 5.317043 6.620457 4.0 8.5   5 5.75 7.000
-    #> 3 4.95625 1.212693 16 4.304543 5.607957 3.5 7.8   4 4.75 5.125
+    #>            y         std  r        LCL        UCL        Min        Max
+    #> 1 0.01941009 0.002263279 16 0.01499798 0.02382219 0.01662102 0.02413793
+    #> 2 0.02398422 0.013426045 16 0.01957212 0.02839633 0.01276596 0.07227139
+    #> 3 0.02682319 0.006705130 16 0.02241109 0.03123530 0.01797386 0.03804473
+    #>          Q25        Q50        Q75
+    #> 1 0.01789370 0.01866454 0.02094627
+    #> 2 0.01919492 0.02033749 0.02150909
+    #> 3 0.02154409 0.02540734 0.03176041
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>         y groups
-    #> 1 6.59375      a
-    #> 2 5.96875      a
-    #> 3 4.95625      b
+    #>            y groups
+    #> 3 0.02682319      a
+    #> 2 0.02398422     ab
+    #> 1 0.01941009      b
     #> 
     #> attr(,"class")
     #> [1] "group"
 
 ![](README_files/figure-gfm/unnamed-chunk-5-18.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-19.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2 2368.9 1184.47  9.0274 0.0005054 ***
-    #> Residuals 45 5904.4  131.21                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  131.2094 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>          y       std  r      LCL      UCL Min   Max
-    #> 1 57.02375  7.170713 16 51.25603 62.79147  44 70.00
-    #> 2 47.28312 14.759924 16 41.51540 53.05085  30 98.00
-    #> 3 39.86812 11.151395 16 34.10040 45.63585  22 60.86
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 8.156788 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>          y groups
-    #> 1 57.02375      a
-    #> 2 47.28312      b
-    #> 3 39.86812      b
-    #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   131.2094 45 48.05833 23.83492 2.014103 8.156788
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>          y       std  r      LCL      UCL Min   Max     Q25    Q50    Q75
-    #> 1 57.02375  7.170713 16 51.25603 62.79147  44 70.00 53.5475 56.485 60.500
-    #> 2 47.28312 14.759924 16 41.51540 53.05085  30 98.00 40.4425 44.225 47.075
-    #> 3 39.86812 11.151395 16 34.10040 45.63585  22 60.86 33.9300 40.945 46.460
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>          y groups
-    #> 1 57.02375      a
-    #> 2 47.28312      b
-    #> 3 39.86812      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-20.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-21.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -765,6 +721,71 @@ for(i in seq_along(variaveis)){
     #> 1 13.353750      a
     #> 2 10.880625      b
     #> 3  9.639375      b
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-20.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-21.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value    Pr(>F)    
+    #> grupo      2 3.0768e-05 1.5384e-05  12.155 6.018e-05 ***
+    #> Residuals 45 5.6955e-05 1.2657e-06                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  1.265676e-06 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004529617 0.0008840665 16 0.003963139 0.005096095 0.003347134 0.006637168
+    #> 2 0.005274460 0.0014227295 16 0.004707982 0.005840938 0.002553191 0.007726269
+    #> 3 0.006473159 0.0009956377 16 0.005906681 0.007039637 0.004747475 0.008556999
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.0008011208 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>             y groups
+    #> 3 0.006473159      a
+    #> 2 0.005274460      b
+    #> 1 0.004529617      b
+    #> $statistics
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   1.265676e-06 45 0.005425745 20.73489 2.014103 0.0008011208
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004529617 0.0008840665 16 0.003963139 0.005096095 0.003347134 0.006637168
+    #> 2 0.005274460 0.0014227295 16 0.004707982 0.005840938 0.002553191 0.007726269
+    #> 3 0.006473159 0.0009956377 16 0.005906681 0.007039637 0.004747475 0.008556999
+    #>           Q25         Q50         Q75
+    #> 1 0.003841852 0.004468736 0.004796020
+    #> 2 0.004364039 0.005097031 0.006421474
+    #> 3 0.006065237 0.006304274 0.006824314
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>             y groups
+    #> 3 0.006473159      a
+    #> 2 0.005274460      b
+    #> 1 0.004529617      b
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -835,6 +856,75 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value   Pr(>F)   
+    #> grupo      2 1.5918e-06 7.9591e-07  6.9478 0.002346 **
+    #> Residuals 45 5.1550e-06 1.1456e-07                    
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  1.145561e-07 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>              y          std  r          LCL         UCL          Min
+    #> 1 0.0010432095 0.0003135056 16 0.0008727855 0.001213634 0.0006514658
+    #> 2 0.0009545583 0.0002932919 16 0.0007841343 0.001124982 0.0004255319
+    #> 3 0.0013774862 0.0003992021 16 0.0012070622 0.001547910 0.0006218905
+    #>           Max
+    #> 1 0.001546790
+    #> 2 0.001613883
+    #> 3 0.002387755
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.000241016 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>              y groups
+    #> 3 0.0013774862      a
+    #> 1 0.0010432095      b
+    #> 2 0.0009545583      b
+    #> $statistics
+    #>        MSerror Df        Mean       CV  t.value         LSD
+    #>   1.145561e-07 45 0.001125085 30.08319 2.014103 0.000241016
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>              y          std  r          LCL         UCL          Min
+    #> 1 0.0010432095 0.0003135056 16 0.0008727855 0.001213634 0.0006514658
+    #> 2 0.0009545583 0.0002932919 16 0.0007841343 0.001124982 0.0004255319
+    #> 3 0.0013774862 0.0003992021 16 0.0012070622 0.001547910 0.0006218905
+    #>           Max          Q25          Q50         Q75
+    #> 1 0.001546790 0.0007587727 0.0009375294 0.001288448
+    #> 2 0.001613883 0.0008333741 0.0009250694 0.001038386
+    #> 3 0.002387755 0.0012040027 0.0013880049 0.001570087
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>              y groups
+    #> 3 0.0013774862      a
+    #> 1 0.0010432095      b
+    #> 2 0.0009545583      b
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-26.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-27.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
     #>           Df Sum Sq Mean Sq F value   Pr(>F)    
     #> grupo      2 299.07 149.534  17.824 1.99e-06 ***
     #> Residuals 45 377.52   8.389                     
@@ -891,7 +981,72 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-26.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-27.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-28.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-29.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value    Pr(>F)    
+    #> grupo      2 6.2103e-05 3.1052e-05  17.305 2.664e-06 ***
+    #> Residuals 45 8.0748e-05 1.7944e-06                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  1.794395e-06 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.006039221 0.0004922036 16 0.005364723 0.006713719 0.005038217 0.006795017
+    #> 2 0.005972738 0.0016998773 16 0.005298240 0.006647236 0.001474926 0.008537887
+    #> 3 0.008418215 0.0015004460 16 0.007743717 0.009092713 0.006121979 0.011320346
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.0009538845 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>             y groups
+    #> 3 0.008418215      a
+    #> 1 0.006039221      b
+    #> 2 0.005972738      b
+    #> $statistics
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   1.794395e-06 45 0.006810058 19.67018 2.014103 0.0009538845
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.006039221 0.0004922036 16 0.005364723 0.006713719 0.005038217 0.006795017
+    #> 2 0.005972738 0.0016998773 16 0.005298240 0.006647236 0.001474926 0.008537887
+    #> 3 0.008418215 0.0015004460 16 0.007743717 0.009092713 0.006121979 0.011320346
+    #>           Q25         Q50         Q75
+    #> 1 0.005762787 0.006038161 0.006329599
+    #> 2 0.005441607 0.006140426 0.007100319
+    #> 3 0.007568392 0.008316482 0.009260274
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>             y groups
+    #> 3 0.008418215      a
+    #> 1 0.006039221      b
+    #> 2 0.005972738      b
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-30.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-31.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -952,7 +1107,72 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-28.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-29.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-32.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-33.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value  Pr(>F)  
+    #> grupo      2 6.4460e-06 3.2230e-06  2.7792 0.07277 .
+    #> Residuals 45 5.2187e-05 1.1597e-06                  
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  1.159701e-06 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.005911021 0.0011333208 16 0.005368777 0.006453265 0.004270096 0.008995502
+    #> 2 0.005635008 0.0011039504 16 0.005092764 0.006177252 0.003404255 0.007726269
+    #> 3 0.006512731 0.0009879168 16 0.005970487 0.007054975 0.004975124 0.008002392
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.0007668488 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>             y groups
+    #> 3 0.006512731      a
+    #> 1 0.005911021     ab
+    #> 2 0.005635008      b
+    #> $statistics
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   1.159701e-06 45 0.006019587 17.88983 2.014103 0.0007668488
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.005911021 0.0011333208 16 0.005368777 0.006453265 0.004270096 0.008995502
+    #> 2 0.005635008 0.0011039504 16 0.005092764 0.006177252 0.003404255 0.007726269
+    #> 3 0.006512731 0.0009879168 16 0.005970487 0.007054975 0.004975124 0.008002392
+    #>           Q25         Q50         Q75
+    #> 1 0.005190967 0.005968720 0.006273877
+    #> 2 0.004973131 0.005709072 0.006368178
+    #> 3 0.005926777 0.006449792 0.007297585
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>             y groups
+    #> 3 0.006512731      a
+    #> 1 0.005911021     ab
+    #> 2 0.005635008      b
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-34.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-35.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -1013,68 +1233,70 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-30.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-31.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-36.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-37.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2  60.292 30.1458  8.8268 0.0005835 ***
-    #> Residuals 45 153.687  3.4153                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #>           Df     Sum Sq    Mean Sq F value Pr(>F)
+    #> grupo      2 8.9030e-07 4.4515e-07  0.8912 0.4173
+    #> Residuals 45 2.2477e-05 4.9948e-07               
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  3.415278 
+    #> Mean Square Error:  4.994847e-07 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>         y      std  r       LCL      UCL Min Max
-    #> 1 13.1875 1.558578 16 12.256961 14.11804  10  17
-    #> 2 10.7500 2.435843 16  9.819461 11.68054   5  16
-    #> 3 10.8750 1.372346 16  9.944461 11.80554   8  14
+    #>             y          std  r         LCL         UCL          Min         Max
+    #> 1 0.001703616 0.0006463975 16 0.001347753 0.002059479 0.0007550019 0.002998501
+    #> 2 0.001945600 0.0007673291 16 0.001589737 0.002301463 0.0008510638 0.004268943
+    #> 3 0.002023474 0.0007013063 16 0.001667611 0.002379337 0.0006218905 0.003164557
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 1.315981 
+    #> least Significant Difference: 0.0005032663 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>         y groups
-    #> 1 13.1875      a
-    #> 3 10.8750      b
-    #> 2 10.7500      b
+    #>             y groups
+    #> 3 0.002023474      a
+    #> 2 0.001945600      a
+    #> 1 0.001703616      a
     #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   3.415278 45 11.60417 15.92572 2.014103 1.315981
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   4.994847e-07 45 0.001890897 37.37604 2.014103 0.0005032663
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>         y      std  r       LCL      UCL Min Max   Q25  Q50    Q75
-    #> 1 13.1875 1.558578 16 12.256961 14.11804  10  17 12.75 13.0 14.000
-    #> 2 10.7500 2.435843 16  9.819461 11.68054   5  16  9.75 10.5 12.250
-    #> 3 10.8750 1.372346 16  9.944461 11.80554   8  14 10.00 11.0 11.125
+    #>             y          std  r         LCL         UCL          Min         Max
+    #> 1 0.001703616 0.0006463975 16 0.001347753 0.002059479 0.0007550019 0.002998501
+    #> 2 0.001945600 0.0007673291 16 0.001589737 0.002301463 0.0008510638 0.004268943
+    #> 3 0.002023474 0.0007013063 16 0.001667611 0.002379337 0.0006218905 0.003164557
+    #>           Q25         Q50         Q75
+    #> 1 0.001415089 0.001557315 0.002005366
+    #> 2 0.001582747 0.001692479 0.002076773
+    #> 3 0.001540731 0.002135016 0.002466474
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>         y groups
-    #> 1 13.1875      a
-    #> 3 10.8750      b
-    #> 2 10.7500      b
+    #>             y groups
+    #> 3 0.002023474      a
+    #> 2 0.001945600      a
+    #> 1 0.001703616      a
     #> 
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-32.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-33.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-38.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-39.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -1135,7 +1357,72 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-34.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-35.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-40.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-41.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value    Pr(>F)    
+    #> grupo      2 0.00031153 1.5576e-04  9.1633 0.0004588 ***
+    #> Residuals 45 0.00076494 1.6999e-05                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  1.699872e-05 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>            y         std  r        LCL        UCL        Min        Max
+    #> 1 0.01636054 0.003168401 16 0.01428453 0.01843656 0.01255493 0.02186495
+    #> 2 0.01963158 0.003938695 16 0.01755557 0.02170759 0.01191489 0.02668090
+    #> 3 0.02259834 0.005044211 16 0.02052233 0.02467436 0.01243781 0.02962601
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.002935924 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>            y groups
+    #> 3 0.02259834      a
+    #> 2 0.01963158      b
+    #> 1 0.01636054      c
+    #> $statistics
+    #>        MSerror Df       Mean       CV  t.value         LSD
+    #>   1.699872e-05 45 0.01953016 21.11069 2.014103 0.002935924
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>            y         std  r        LCL        UCL        Min        Max
+    #> 1 0.01636054 0.003168401 16 0.01428453 0.01843656 0.01255493 0.02186495
+    #> 2 0.01963158 0.003938695 16 0.01755557 0.02170759 0.01191489 0.02668090
+    #> 3 0.02259834 0.005044211 16 0.02052233 0.02467436 0.01243781 0.02962601
+    #>          Q25        Q50        Q75
+    #> 1 0.01349940 0.01642553 0.01857629
+    #> 2 0.01682653 0.01917678 0.02209961
+    #> 3 0.02048088 0.02214562 0.02670447
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>            y groups
+    #> 3 0.02259834      a
+    #> 2 0.01963158      b
+    #> 1 0.01636054      c
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-42.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-43.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -1196,7 +1483,72 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-36.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-37.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-44.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-45.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df     Sum Sq    Mean Sq F value    Pr(>F)    
+    #> grupo      2 0.00015015 7.5076e-05  9.5517 0.0003487 ***
+    #> Residuals 45 0.00035370 7.8600e-06                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  7.859984e-06 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.01168659 0.001444147 16 0.01027492 0.01309826 0.009422473 0.01452733
+    #> 2 0.01433593 0.002981193 16 0.01292427 0.01574760 0.009361702 0.02027748
+    #> 3 0.01597985 0.003550617 16 0.01456818 0.01739152 0.007462687 0.02007519
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.0019964 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>            y groups
+    #> 3 0.01597985      a
+    #> 2 0.01433593      a
+    #> 1 0.01168659      b
+    #> $statistics
+    #>        MSerror Df       Mean       CV  t.value       LSD
+    #>   7.859984e-06 45 0.01400079 20.02434 2.014103 0.0019964
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.01168659 0.001444147 16 0.01027492 0.01309826 0.009422473 0.01452733
+    #> 2 0.01433593 0.002981193 16 0.01292427 0.01574760 0.009361702 0.02027748
+    #> 3 0.01597985 0.003550617 16 0.01456818 0.01739152 0.007462687 0.02007519
+    #>          Q25        Q50        Q75
+    #> 1 0.01057901 0.01166253 0.01265998
+    #> 2 0.01257058 0.01405124 0.01557605
+    #> 3 0.01386160 0.01636907 0.01901578
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>            y groups
+    #> 3 0.01597985      a
+    #> 2 0.01433593      a
+    #> 1 0.01168659      b
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-46.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-47.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
@@ -1257,364 +1609,67 @@ for(i in seq_along(variaveis)){
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-38.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-39.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value  Pr(>F)  
-    #> grupo      2  4.185 2.09250  4.3418 0.01887 *
-    #> Residuals 45 21.688 0.48194                  
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  0.4819444 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>        y       std  r      LCL      UCL Min Max
-    #> 1 5.3000 0.7071068 16 4.950441 5.649559 4.0 6.3
-    #> 2 4.6250 0.6454972 16 4.275441 4.974559 3.0 5.5
-    #> 3 4.7375 0.7274384 16 4.387941 5.087059 3.5 6.5
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 0.4943508 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>        y groups
-    #> 1 5.3000      a
-    #> 3 4.7375      b
-    #> 2 4.6250      b
-    #> $statistics
-    #>     MSerror Df   Mean       CV  t.value       LSD
-    #>   0.4819444 45 4.8875 14.20403 2.014103 0.4943508
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>        y       std  r      LCL      UCL Min Max   Q25 Q50 Q75
-    #> 1 5.3000 0.7071068 16 4.950441 5.649559 4.0 6.3 5.000   5   6
-    #> 2 4.6250 0.6454972 16 4.275441 4.974559 3.0 5.5 4.000   5   5
-    #> 3 4.7375 0.7274384 16 4.387941 5.087059 3.5 6.5 4.375   5   5
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>        y groups
-    #> 1 5.3000      a
-    #> 3 4.7375      b
-    #> 2 4.6250      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-40.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-41.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)   
-    #> grupo      2 13.387  6.6935  6.6061 0.003051 **
-    #> Residuals 45 45.595  1.0132                    
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  1.013227 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>          y       std  r      LCL      UCL Min  Max
-    #> 1 6.908125 0.9741952 16 6.401280 7.414970   5 9.03
-    #> 2 6.000000 0.7745967 16 5.493155 6.506845   5 7.00
-    #> 3 5.656250 1.2209115 16 5.149405 6.163095   4 8.00
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 0.7167871 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>          y groups
-    #> 1 6.908125      a
-    #> 2 6.000000      b
-    #> 3 5.656250      b
-    #> $statistics
-    #>    MSerror Df     Mean       CV  t.value       LSD
-    #>   1.013227 45 6.188125 16.26651 2.014103 0.7167871
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>          y       std  r      LCL      UCL Min  Max   Q25 Q50   Q75
-    #> 1 6.908125 0.9741952 16 6.401280 7.414970   5 9.03 6.000 7.0 7.125
-    #> 2 6.000000 0.7745967 16 5.493155 6.506845   5 7.00 5.375 6.0 6.625
-    #> 3 5.656250 1.2209115 16 5.149405 6.163095   4 8.00 5.000 5.5 6.625
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>          y groups
-    #> 1 6.908125      a
-    #> 2 6.000000      b
-    #> 3 5.656250      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-42.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-43.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2 206.77 103.384  8.5959 0.0006891 ***
-    #> Residuals 45 541.22  12.027                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  12.02705 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>          y      std  r       LCL      UCL  Min   Max
-    #> 1 14.24625 4.628726 16 12.500021 15.99248 7.00 20.00
-    #> 2 10.57188 2.899950 16  8.825646 12.31810 6.00 16.95
-    #> 3  9.36625 2.499266 16  7.620021 11.11248 4.82 13.15
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 2.469541 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>          y groups
-    #> 1 14.24625      a
-    #> 2 10.57188      b
-    #> 3  9.36625      b
-    #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   12.02705 45 11.39479 30.43499 2.014103 2.469541
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>          y      std  r       LCL      UCL  Min   Max     Q25   Q50     Q75
-    #> 1 14.24625 4.628726 16 12.500021 15.99248 7.00 20.00 11.0725 15.50 18.1825
-    #> 2 10.57188 2.899950 16  8.825646 12.31810 6.00 16.95  8.7275 10.00 12.6075
-    #> 3  9.36625 2.499266 16  7.620021 11.11248 4.82 13.15  7.9075  9.28 10.9725
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>          y groups
-    #> 1 14.24625      a
-    #> 2 10.57188      b
-    #> 3  9.36625      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-44.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-45.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)   
-    #> grupo      2 129.50   64.75  5.1186 0.009933 **
-    #> Residuals 45 569.25   12.65                    
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  12.65 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>        y      std  r      LCL      UCL  Min Max
-    #> 1 18.250 4.123106 16 16.45912 20.04088 13.0  25
-    #> 2 15.875 3.612478 16 14.08412 17.66588 11.0  23
-    #> 3 14.250 2.810694 16 12.45912 16.04088 10.5  20
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 2.53269 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>        y groups
-    #> 1 18.250      a
-    #> 2 15.875     ab
-    #> 3 14.250      b
-    #> $statistics
-    #>   MSerror Df   Mean       CV  t.value     LSD
-    #>     12.65 45 16.125 22.05695 2.014103 2.53269
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>        y      std  r      LCL      UCL  Min Max   Q25  Q50   Q75
-    #> 1 18.250 4.123106 16 16.45912 20.04088 13.0  25 14.75 17.0 22.25
-    #> 2 15.875 3.612478 16 14.08412 17.66588 11.0  23 13.00 15.5 17.25
-    #> 3 14.250 2.810694 16 12.45912 16.04088 10.5  20 12.00 14.0 16.00
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>        y groups
-    #> 1 18.250      a
-    #> 2 15.875     ab
-    #> 3 14.250      b
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
-![](README_files/figure-gfm/unnamed-chunk-5-46.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-47.png)<!-- -->
-
-    #> Analysis of Variance Table
-    #> 
-    #> Response: y
-    #>           Df Sum Sq Mean Sq F value Pr(>F)
-    #> grupo      2  44.53  22.263  1.7952 0.1778
-    #> Residuals 45 558.05  12.401               
-    #> 
-    #> Study: modelo ~ "grupo"
-    #> 
-    #> LSD t Test for y 
-    #> 
-    #> Mean Square Error:  12.40109 
-    #> 
-    #> grupo,  means and individual ( 95 %) CI
-    #> 
-    #>          y      std  r       LCL      UCL Min   Max
-    #> 1 12.46063 2.723183 16 10.687450 14.23380   6 18.00
-    #> 2 10.79750 3.513258 16  9.024325 12.57068   6 20.78
-    #> 3 10.18000 4.176669 16  8.406825 11.95318   4 17.41
-    #> 
-    #> Alpha: 0.05 ; DF Error: 45
-    #> Critical Value of t: 2.014103 
-    #> 
-    #> least Significant Difference: 2.507649 
-    #> 
-    #> Treatments with the same letter are not significantly different.
-    #> 
-    #>          y groups
-    #> 1 12.46063      a
-    #> 2 10.79750      a
-    #> 3 10.18000      a
-    #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   12.40109 45 11.14604 31.59434 2.014103 2.507649
-    #> 
-    #> $parameters
-    #>         test p.ajusted name.t ntr alpha
-    #>   Fisher-LSD      none  grupo   3  0.05
-    #> 
-    #> $means
-    #>          y      std  r       LCL      UCL Min   Max     Q25   Q50     Q75
-    #> 1 12.46063 2.723183 16 10.687450 14.23380   6 18.00 11.3900 12.00 14.0175
-    #> 2 10.79750 3.513258 16  9.024325 12.57068   6 20.78  8.7825 10.00 11.5275
-    #> 3 10.18000 4.176669 16  8.406825 11.95318   4 17.41  7.5000 10.37 13.2325
-    #> 
-    #> $comparison
-    #> NULL
-    #> 
-    #> $groups
-    #>          y groups
-    #> 1 12.46063      a
-    #> 2 10.79750      a
-    #> 3 10.18000      a
-    #> 
-    #> attr(,"class")
-    #> [1] "group"
-
 ![](README_files/figure-gfm/unnamed-chunk-5-48.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-49.png)<!-- -->
 
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value Pr(>F)
-    #> grupo      2   41.82  20.909  0.6921 0.5057
-    #> Residuals 45 1359.40  30.209               
+    #>           Df     Sum Sq    Mean Sq F value    Pr(>F)    
+    #> grupo      2 3.3424e-05 1.6712e-05  8.2557 0.0008826 ***
+    #> Residuals 45 9.1093e-05 2.0243e-06                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  30.20896 
+    #> Mean Square Error:  2.024285e-06 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y      std  r      LCL      UCL  Min Max
-    #> 1 29.50000 3.949684 16 26.73249 32.26751 17.0  33
-    #> 2 29.25313 4.622967 16 26.48561 32.02064 24.0  39
-    #> 3 27.40812 7.324961 16 24.64061 30.17564  6.5  37
+    #>             y         std  r         LCL         UCL         Min         Max
+    #> 1 0.003532264 0.001075378 16 0.002815861 0.004248667 0.002264151 0.006172840
+    #> 2 0.003739419 0.001360982 16 0.003023016 0.004455823 0.001702128 0.007470651
+    #> 3 0.005396895 0.001750470 16 0.004680492 0.006113298 0.002487562 0.010036075
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 3.913854 
+    #> least Significant Difference: 0.001013147 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>          y groups
-    #> 1 29.50000      a
-    #> 2 29.25313      a
-    #> 3 27.40812      a
+    #>             y groups
+    #> 3 0.005396895      a
+    #> 2 0.003739419      b
+    #> 1 0.003532264      b
     #> $statistics
-    #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   30.20896 45 28.72042 19.13715 2.014103 3.913854
+    #>        MSerror Df        Mean       CV  t.value         LSD
+    #>   2.024285e-06 45 0.004222859 33.69219 2.014103 0.001013147
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r      LCL      UCL  Min Max   Q25 Q50     Q75
-    #> 1 29.50000 3.949684 16 26.73249 32.26751 17.0  33 28.75  30 32.2500
-    #> 2 29.25313 4.622967 16 26.48561 32.02064 24.0  39 26.75  27 31.2500
-    #> 3 27.40812 7.324961 16 24.64061 30.17564  6.5  37 24.75  30 31.2725
+    #>             y         std  r         LCL         UCL         Min         Max
+    #> 1 0.003532264 0.001075378 16 0.002815861 0.004248667 0.002264151 0.006172840
+    #> 2 0.003739419 0.001360982 16 0.003023016 0.004455823 0.001702128 0.007470651
+    #> 3 0.005396895 0.001750470 16 0.004680492 0.006113298 0.002487562 0.010036075
+    #>           Q25         Q50         Q75
+    #> 1 0.002906945 0.003149209 0.004361848
+    #> 2 0.003047371 0.003365031 0.004057325
+    #> 3 0.004437822 0.005691461 0.006151928
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>          y groups
-    #> 1 29.50000      a
-    #> 2 29.25313      a
-    #> 3 27.40812      a
+    #>             y groups
+    #> 3 0.005396895      a
+    #> 2 0.003739419      b
+    #> 1 0.003532264      b
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1624,58 +1679,56 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2  92.155  46.077  8.8464 0.0005753 ***
-    #> Residuals 45 234.387   5.209                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #>           Df Sum Sq Mean Sq F value Pr(>F)
+    #> grupo      2  45.77  22.883  1.8407 0.1705
+    #> Residuals 45 559.42  12.432               
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  5.208609 
+    #> Mean Square Error:  12.43162 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y      std  r      LCL      UCL Min   Max
-    #> 1 7.432500 3.181881 16 6.283334 8.581666   2 13.00
-    #> 2 4.909375 1.755686 16 3.760209 6.058541   2  9.67
-    #> 3 4.205000 1.555322 16 3.055834 5.354166   2  6.84
+    #>          y      std  r       LCL      UCL Min   Max
+    #> 1 12.51688 2.743603 16 10.741518 14.29223   6 18.00
+    #> 2 10.83688 3.486952 16  9.061518 12.61223   6 20.78
+    #> 3 10.20250 4.196267 16  8.427143 11.97786   4 17.41
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 1.625166 
+    #> least Significant Difference: 2.510733 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
     #>          y groups
-    #> 1 7.432500      a
-    #> 2 4.909375      b
-    #> 3 4.205000      b
+    #> 1 12.51688      a
+    #> 2 10.83688      a
+    #> 3 10.20250      a
     #> $statistics
     #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   5.208609 45 5.515625 41.37768 2.014103 1.625166
+    #>   12.43162 45 11.18542 31.52185 2.014103 2.510733
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r      LCL      UCL Min   Max    Q25   Q50    Q75
-    #> 1 7.432500 3.181881 16 6.283334 8.581666   2 13.00 6.0000 6.230 8.8400
-    #> 2 4.909375 1.755686 16 3.760209 6.058541   2  9.67 4.0000 4.305 6.0000
-    #> 3 4.205000 1.555322 16 3.055834 5.354166   2  6.84 2.9525 4.535 5.1125
+    #>          y      std  r       LCL      UCL Min   Max     Q25   Q50     Q75
+    #> 1 12.51688 2.743603 16 10.741518 14.29223   6 18.00 11.4575 12.00 14.0475
+    #> 2 10.83688 3.486952 16  9.061518 12.61223   6 20.78  9.0750 10.00 11.5275
+    #> 3 10.20250 4.196267 16  8.427143 11.97786   4 17.41  7.5000 10.46 13.2325
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
     #>          y groups
-    #> 1 7.432500      a
-    #> 2 4.909375      b
-    #> 3 4.205000      b
+    #> 1 12.51688      a
+    #> 2 10.83688      a
+    #> 3 10.20250      a
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1685,56 +1738,62 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value Pr(>F)
-    #> grupo      2  82.24  41.122  1.8683 0.1664
-    #> Residuals 44 968.46  22.010               
+    #>           Df     Sum Sq    Mean Sq F value   Pr(>F)   
+    #> grupo      2 6.1903e-05 3.0952e-05  7.0923 0.002102 **
+    #> Residuals 45 1.9639e-04 4.3641e-06                    
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  22.0104 
+    #> Mean Square Error:  4.364142e-06 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y      std  r      LCL      UCL Min   Max
-    #> 1 19.31437 4.950014 16 16.95059 21.67816   6 24.00
-    #> 2 16.06667 2.463060 15 13.62536 18.50797  12 22.00
-    #> 3 17.50750 5.865063 16 15.14371 19.87129   8 36.05
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004249785 0.0009263701 16 0.003197893 0.005301677 0.002264151 0.006746627
+    #> 2 0.005280093 0.0017820584 16 0.004228201 0.006331985 0.002553191 0.008880342
+    #> 3 0.007002636 0.0030097395 16 0.005950744 0.008054528 0.002453988 0.012932331
     #> 
-    #> Alpha: 0.05 ; DF Error: 44
-    #> Critical Value of t: 2.015368 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
     #> 
-    #> Groups according to probability of means differences and alpha level( 0.05 )
+    #> least Significant Difference: 0.0014876 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>          y groups
-    #> 1 19.31437      a
-    #> 3 17.50750      a
-    #> 2 16.06667      a
+    #>             y groups
+    #> 3 0.007002636      a
+    #> 2 0.005280093      b
+    #> 1 0.004249785      b
     #> $statistics
-    #>   MSerror Df     Mean       CV
-    #>   22.0104 44 17.66277 26.56166
+    #>        MSerror Df        Mean       CV  t.value       LSD
+    #>   4.364142e-06 45 0.005510838 37.90808 2.014103 0.0014876
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r      LCL      UCL Min   Max  Q25 Q50     Q75
-    #> 1 19.31437 4.950014 16 16.95059 21.67816   6 24.00 18.0  21 22.2500
-    #> 2 16.06667 2.463060 15 13.62536 18.50797  12 22.00 14.5  16 17.0000
-    #> 3 17.50750 5.865063 16 15.14371 19.87129   8 36.05 15.0  17 19.0125
+    #>             y          std  r         LCL         UCL         Min         Max
+    #> 1 0.004249785 0.0009263701 16 0.003197893 0.005301677 0.002264151 0.006746627
+    #> 2 0.005280093 0.0017820584 16 0.004228201 0.006331985 0.002553191 0.008880342
+    #> 3 0.007002636 0.0030097395 16 0.005950744 0.008054528 0.002453988 0.012932331
+    #>           Q25         Q50         Q75
+    #> 1 0.003802141 0.004357739 0.004451087
+    #> 2 0.004259880 0.004845602 0.005575116
+    #> 3 0.004979976 0.006810815 0.008612762
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>          y groups
-    #> 1 19.31437      a
-    #> 3 17.50750      a
-    #> 2 16.06667      a
+    #>             y groups
+    #> 3 0.007002636      a
+    #> 2 0.005280093      b
+    #> 1 0.004249785      b
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1744,9 +1803,9 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value   Pr(>F)    
-    #> grupo      2 2703.7 1351.86  9.7902 0.000304 ***
-    #> Residuals 44 6075.7  138.08                     
+    #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
+    #> grupo      2  89.379  44.690   8.354 0.0008215 ***
+    #> Residuals 45 240.726   5.349                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -1754,48 +1813,48 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  138.0835 
+    #> Mean Square Error:  5.349464 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y       std  r      LCL      UCL Min   Max
-    #> 1 49.36062  9.563324 16 43.44003 55.28122  38 68.88
-    #> 2 40.44333 11.774701 15 34.32857 46.55810  20 64.14
-    #> 3 30.97938 13.571556 16 25.05878 36.89997  10 58.88
+    #>          y      std  r      LCL      UCL Min   Max
+    #> 1 7.455000 3.217705 16 6.290400 8.619600   2 13.00
+    #> 2 4.909375 1.755686 16 3.744775 6.073975   2  9.67
+    #> 3 4.306250 1.616271 16 3.141650 5.470850   2  6.84
     #> 
-    #> Alpha: 0.05 ; DF Error: 44
-    #> Critical Value of t: 2.015368 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
     #> 
-    #> Groups according to probability of means differences and alpha level( 0.05 )
+    #> least Significant Difference: 1.646994 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
     #>          y groups
-    #> 1 49.36062      a
-    #> 2 40.44333      b
-    #> 3 30.97938      c
+    #> 1 7.455000      a
+    #> 2 4.909375      b
+    #> 3 4.306250      b
     #> $statistics
-    #>    MSerror Df     Mean       CV
-    #>   138.0835 44 40.25723 29.18952
+    #>    MSerror Df     Mean       CV  t.value      LSD
+    #>   5.349464 45 5.556875 41.62215 2.014103 1.646994
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y       std  r      LCL      UCL Min   Max     Q25    Q50     Q75
-    #> 1 49.36062  9.563324 16 43.44003 55.28122  38 68.88 42.0825 46.000 57.4925
-    #> 2 40.44333 11.774701 15 34.32857 46.55810  20 64.14 33.6300 38.670 45.7750
-    #> 3 30.97938 13.571556 16 25.05878 36.89997  10 58.88 17.5175 34.995 39.2150
+    #>          y      std  r      LCL      UCL Min   Max    Q25   Q50    Q75
+    #> 1 7.455000 3.217705 16 6.290400 8.619600   2 13.00 6.0000 6.230 8.8400
+    #> 2 4.909375 1.755686 16 3.744775 6.073975   2  9.67 4.0000 4.305 6.0000
+    #> 3 4.306250 1.616271 16 3.141650 5.470850   2  6.84 2.9525 4.755 5.3475
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
     #>          y groups
-    #> 1 49.36062      a
-    #> 2 40.44333      b
-    #> 3 30.97938      c
+    #> 1 7.455000      a
+    #> 2 4.909375      b
+    #> 3 4.306250      b
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1805,58 +1864,60 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df  Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2  5928.3 2964.17  11.466 9.821e-05 ***
-    #> Residuals 44 11375.3  258.53                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #>           Df     Sum Sq    Mean Sq F value Pr(>F)
+    #> grupo      2 3.0690e-06 1.5347e-06  1.6999 0.1942
+    #> Residuals 45 4.0629e-05 9.0287e-07               
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  258.529 
+    #> Mean Square Error:  9.028668e-07 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y      std  r       LCL      UCL Min Max
-    #> 1 134.5625 11.36057 16 126.46131 142.6637 115 160
-    #> 2 115.8000 17.95709 15 107.43313 124.1669  85 145
-    #> 3 108.0625 18.11986 16  99.96131 116.1637  76 135
+    #>             y          std  r         LCL         UCL          Min         Max
+    #> 1 0.002483608 0.0009176315 16 0.002005161 0.002962055 0.0007547170 0.004114650
+    #> 2 0.002348757 0.0007169087 16 0.001870310 0.002827204 0.0008510638 0.004114894
+    #> 3 0.002939753 0.0011630110 16 0.002461306 0.003418200 0.0012269939 0.005283757
     #> 
-    #> Alpha: 0.05 ; DF Error: 44
-    #> Critical Value of t: 2.015368 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
     #> 
-    #> Groups according to probability of means differences and alpha level( 0.05 )
+    #> least Significant Difference: 0.0006766259 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>          y groups
-    #> 1 134.5625      a
-    #> 2 115.8000      b
-    #> 3 108.0625      b
+    #>             y groups
+    #> 3 0.002939753      a
+    #> 1 0.002483608      a
+    #> 2 0.002348757      a
     #> $statistics
-    #>   MSerror Df     Mean       CV
-    #>   258.529 44 119.5532 13.44911
+    #>        MSerror Df        Mean       CV  t.value          LSD
+    #>   9.028668e-07 45 0.002590706 36.67699 2.014103 0.0006766259
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r       LCL      UCL Min Max    Q25   Q50    Q75
-    #> 1 134.5625 11.36057 16 126.46131 142.6637 115 160 128.25 133.5 141.25
-    #> 2 115.8000 17.95709 15 107.43313 124.1669  85 145 105.50 114.0 126.50
-    #> 3 108.0625 18.11986 16  99.96131 116.1637  76 135  94.50 110.0 122.50
+    #>             y          std  r         LCL         UCL          Min         Max
+    #> 1 0.002483608 0.0009176315 16 0.002005161 0.002962055 0.0007547170 0.004114650
+    #> 2 0.002348757 0.0007169087 16 0.001870310 0.002827204 0.0008510638 0.004114894
+    #> 3 0.002939753 0.0011630110 16 0.002461306 0.003418200 0.0012269939 0.005283757
+    #>           Q25         Q50         Q75
+    #> 1 0.001926712 0.002292596 0.003003933
+    #> 2 0.002009624 0.002203863 0.002667324
+    #> 3 0.002177977 0.003018203 0.003616869
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>          y groups
-    #> 1 134.5625      a
-    #> 2 115.8000      b
-    #> 3 108.0625      b
+    #>             y groups
+    #> 3 0.002939753      a
+    #> 1 0.002483608      a
+    #> 2 0.002348757      a
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1866,56 +1927,58 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value Pr(>F)
-    #> grupo      2  24.36  12.179  0.7506  0.478
-    #> Residuals 44 713.88  16.225               
+    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
+    #> grupo      2 2708.5 1354.26  10.037 0.0002486 ***
+    #> Residuals 45 6071.4  134.92                      
+    #> ---
+    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  16.22463 
+    #> Mean Square Error:  134.9206 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
     #>          y      std  r      LCL      UCL Min   Max
-    #> 1 15.29813 3.827079 16 13.26866 17.32759   8 22.36
-    #> 2 14.92133 2.986610 15 12.82531 17.01736  10 22.54
-    #> 3 13.63125 4.961908 16 11.60178 15.66072   6 22.12
+    #> 1 49.37750  9.54787 16 43.52878 55.22622  38 68.88
+    #> 2 40.41562 11.37598 16 34.56690 46.26435  20 64.14
+    #> 3 30.97938 13.57156 16 25.13065 36.82810  10 58.88
     #> 
-    #> Alpha: 0.05 ; DF Error: 44
-    #> Critical Value of t: 2.015368 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
     #> 
-    #> Groups according to probability of means differences and alpha level( 0.05 )
+    #> least Significant Difference: 8.271342 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
     #>          y groups
-    #> 1 15.29813      a
-    #> 2 14.92133      a
-    #> 3 13.63125      a
+    #> 1 49.37750      a
+    #> 2 40.41562      b
+    #> 3 30.97938      c
     #> $statistics
-    #>    MSerror Df     Mean       CV
-    #>   16.22463 44 14.61043 27.56922
+    #>    MSerror Df    Mean       CV  t.value      LSD
+    #>   134.9206 45 40.2575 28.85309 2.014103 8.271342
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r      LCL      UCL Min   Max     Q25   Q50    Q75
-    #> 1 15.29813 3.827079 16 13.26866 17.32759   8 22.36 12.3450 15.00 18.000
-    #> 2 14.92133 2.986610 15 12.82531 17.01736  10 22.54 13.2100 14.36 16.170
-    #> 3 13.63125 4.961908 16 11.60178 15.66072   6 22.12 10.4425 12.23 17.305
+    #>          y      std  r      LCL      UCL Min   Max     Q25    Q50     Q75
+    #> 1 49.37750  9.54787 16 43.52878 55.22622  38 68.88 42.0825 46.000 57.4925
+    #> 2 40.41562 11.37598 16 34.56690 46.26435  20 64.14 34.8150 39.335 43.8875
+    #> 3 30.97938 13.57156 16 25.13065 36.82810  10 58.88 17.5175 34.995 39.2150
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
     #>          y groups
-    #> 1 15.29813      a
-    #> 2 14.92133      a
-    #> 3 13.63125      a
+    #> 1 49.37750      a
+    #> 2 40.41562      b
+    #> 3 30.97938      c
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1925,58 +1988,60 @@ for(i in seq_along(variaveis)){
     #> Analysis of Variance Table
     #> 
     #> Response: y
-    #>           Df Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2 361.90 180.952  9.9397 0.0002742 ***
-    #> Residuals 44 801.02  18.205                      
-    #> ---
-    #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    #>           Df     Sum Sq    Mean Sq F value Pr(>F)
+    #> grupo      2 0.00014431 7.2154e-05  1.7239 0.1899
+    #> Residuals 45 0.00188343 4.1854e-05               
     #> 
     #> Study: modelo ~ "grupo"
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  18.20502 
+    #> Mean Square Error:  4.185396e-05 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
-    #>          y      std  r      LCL      UCL Min  Max
-    #> 1 32.37500 4.883646 16 30.22524 34.52476  24 43.0
-    #> 2 29.66667 4.121662 15 27.44640 31.88693  22 35.5
-    #> 3 25.68750 3.700788 16 23.53774 27.83726  18 31.0
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.01681199 0.003163026 16 0.01355445 0.02006953 0.012600239 0.02339623
+    #> 2 0.01964553 0.005816723 16 0.01638799 0.02290307 0.008510638 0.02949853
+    #> 3 0.02096868 0.009040071 16 0.01771113 0.02422622 0.006218905 0.03813472
     #> 
-    #> Alpha: 0.05 ; DF Error: 44
-    #> Critical Value of t: 2.015368 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
     #> 
-    #> Groups according to probability of means differences and alpha level( 0.05 )
+    #> least Significant Difference: 0.00460686 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
-    #>          y groups
-    #> 1 32.37500      a
-    #> 2 29.66667      a
-    #> 3 25.68750      b
+    #>            y groups
+    #> 3 0.02096868      a
+    #> 2 0.01964553      a
+    #> 1 0.01681199      a
     #> $statistics
-    #>    MSerror Df     Mean       CV
-    #>   18.20502 44 29.23404 14.59509
+    #>        MSerror Df       Mean      CV  t.value        LSD
+    #>   4.185396e-05 45 0.01914207 33.7971 2.014103 0.00460686
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
     #>   Fisher-LSD      none  grupo   3  0.05
     #> 
     #> $means
-    #>          y      std  r      LCL      UCL Min  Max   Q25  Q50   Q75
-    #> 1 32.37500 4.883646 16 30.22524 34.52476  24 43.0 29.00 31.5 33.25
-    #> 2 29.66667 4.121662 15 27.44640 31.88693  22 35.5 27.00 30.0 32.75
-    #> 3 25.68750 3.700788 16 23.53774 27.83726  18 31.0 24.75 25.5 28.25
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.01681199 0.003163026 16 0.01355445 0.02006953 0.012600239 0.02339623
+    #> 2 0.01964553 0.005816723 16 0.01638799 0.02290307 0.008510638 0.02949853
+    #> 3 0.02096868 0.009040071 16 0.01771113 0.02422622 0.006218905 0.03813472
+    #>          Q25        Q50        Q75
+    #> 1 0.01420179 0.01641186 0.01852926
+    #> 2 0.01640999 0.01859949 0.02273035
+    #> 3 0.01270255 0.02209148 0.02472954
     #> 
     #> $comparison
     #> NULL
     #> 
     #> $groups
-    #>          y groups
-    #> 1 32.37500      a
-    #> 2 29.66667      a
-    #> 3 25.68750      b
+    #>            y groups
+    #> 3 0.02096868      a
+    #> 2 0.01964553      a
+    #> 1 0.01681199      a
     #> 
     #> attr(,"class")
     #> [1] "group"
@@ -1987,8 +2052,8 @@ for(i in seq_along(variaveis)){
     #> 
     #> Response: y
     #>           Df Sum Sq Mean Sq F value    Pr(>F)    
-    #> grupo      2  11628  5813.9  18.774 1.179e-06 ***
-    #> Residuals 45  13936   309.7                      
+    #> grupo      2  11609  5804.4  18.718 1.215e-06 ***
+    #> Residuals 45  13954   310.1                      
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     #> 
@@ -1996,29 +2061,29 @@ for(i in seq_along(variaveis)){
     #> 
     #> LSD t Test for y 
     #> 
-    #> Mean Square Error:  309.6818 
+    #> Mean Square Error:  310.0988 
     #> 
     #> grupo,  means and individual ( 95 %) CI
     #> 
     #>          y      std  r      LCL      UCL   Min   Max
-    #> 1 62.90125 18.15692 16 54.04031 71.76219 38.48 90.00
-    #> 2 36.56063 11.57465 16 27.69969 45.42156 16.00 54.14
-    #> 3 25.86188 21.57311 16 17.00094 34.72281  2.00 87.66
+    #> 1 62.90125 18.15692 16 54.03435 71.76815 38.48 90.00
+    #> 2 36.60563 11.62372 16 27.73873 45.47252 16.00 54.14
+    #> 3 25.88437 21.57572 16 17.01748 34.75127  2.00 87.66
     #> 
     #> Alpha: 0.05 ; DF Error: 45
     #> Critical Value of t: 2.014103 
     #> 
-    #> least Significant Difference: 12.53126 
+    #> least Significant Difference: 12.53969 
     #> 
     #> Treatments with the same letter are not significantly different.
     #> 
     #>          y groups
     #> 1 62.90125      a
-    #> 2 36.56063      b
-    #> 3 25.86188      b
+    #> 2 36.60563      b
+    #> 3 25.88437      b
     #> $statistics
     #>    MSerror Df     Mean       CV  t.value      LSD
-    #>   309.6818 45 41.77458 42.12556 2.014103 12.53126
+    #>   310.0988 45 41.79708 42.13122 2.014103 12.53969
     #> 
     #> $parameters
     #>         test p.ajusted name.t ntr alpha
@@ -2026,9 +2091,9 @@ for(i in seq_along(variaveis)){
     #> 
     #> $means
     #>          y      std  r      LCL      UCL   Min   Max     Q25    Q50     Q75
-    #> 1 62.90125 18.15692 16 54.04031 71.76219 38.48 90.00 47.5000 63.090 76.5825
-    #> 2 36.56063 11.57465 16 27.69969 45.42156 16.00 54.14 30.3875 37.395 47.2275
-    #> 3 25.86188 21.57311 16 17.00094 34.72281  2.00 87.66 11.7950 22.395 32.4450
+    #> 1 62.90125 18.15692 16 54.03435 71.76815 38.48 90.00 47.5000 63.090 76.5825
+    #> 2 36.60563 11.62372 16 27.73873 45.47252 16.00 54.14 30.3875 37.395 47.2275
+    #> 3 25.88437 21.57572 16 17.01748 34.75127  2.00 87.66 11.7950 22.395 32.4450
     #> 
     #> $comparison
     #> NULL
@@ -2036,13 +2101,76 @@ for(i in seq_along(variaveis)){
     #> $groups
     #>          y groups
     #> 1 62.90125      a
-    #> 2 36.56063      b
-    #> 3 25.86188      b
+    #> 2 36.60563      b
+    #> 3 25.88437      b
     #> 
     #> attr(,"class")
     #> [1] "group"
 
-![](README_files/figure-gfm/unnamed-chunk-5-64.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-64.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-5-65.png)<!-- -->
+
+    #> Analysis of Variance Table
+    #> 
+    #> Response: y
+    #>           Df    Sum Sq    Mean Sq F value Pr(>F)
+    #> grupo      2 0.0001908 9.5405e-05  1.3165 0.2782
+    #> Residuals 45 0.0032611 7.2468e-05               
+    #> 
+    #> Study: modelo ~ "grupo"
+    #> 
+    #> LSD t Test for y 
+    #> 
+    #> Mean Square Error:  7.246785e-05 
+    #> 
+    #> grupo,  means and individual ( 95 %) CI
+    #> 
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.02128884 0.005712573 16 0.01700243 0.02557526 0.011987539 0.03244838
+    #> 2 0.01763841 0.005449149 16 0.01335199 0.02192483 0.006808511 0.02759382
+    #> 3 0.01665395 0.012452986 16 0.01236753 0.02094037 0.001865672 0.05043728
+    #> 
+    #> Alpha: 0.05 ; DF Error: 45
+    #> Critical Value of t: 2.014103 
+    #> 
+    #> least Significant Difference: 0.00606191 
+    #> 
+    #> Treatments with the same letter are not significantly different.
+    #> 
+    #>            y groups
+    #> 1 0.02128884      a
+    #> 2 0.01763841      a
+    #> 3 0.01665395      a
+    #> $statistics
+    #>        MSerror Df       Mean       CV  t.value        LSD
+    #>   7.246785e-05 45 0.01852707 45.94794 2.014103 0.00606191
+    #> 
+    #> $parameters
+    #>         test p.ajusted name.t ntr alpha
+    #>   Fisher-LSD      none  grupo   3  0.05
+    #> 
+    #> $means
+    #>            y         std  r        LCL        UCL         Min        Max
+    #> 1 0.02128884 0.005712573 16 0.01700243 0.02557526 0.011987539 0.03244838
+    #> 2 0.01763841 0.005449149 16 0.01335199 0.02192483 0.006808511 0.02759382
+    #> 3 0.01665395 0.012452986 16 0.01236753 0.02094037 0.001865672 0.05043728
+    #>           Q25        Q50        Q75
+    #> 1 0.017999205 0.02084642 0.02299480
+    #> 2 0.014499963 0.01796119 0.02069741
+    #> 3 0.009564175 0.01454642 0.02217803
+    #> 
+    #> $comparison
+    #> NULL
+    #> 
+    #> $groups
+    #>            y groups
+    #> 1 0.02128884      a
+    #> 2 0.01763841      a
+    #> 3 0.01665395      a
+    #> 
+    #> attr(,"class")
+    #> [1] "group"
+
+![](README_files/figure-gfm/unnamed-chunk-5-66.png)<!-- -->
 
 # DXA - 29 -07 (2).xlsx
 
